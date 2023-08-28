@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# Run tests
+pytest
+
+# Check if tests were successful
+if [ $? -ne 0 ]; then
+  echo "Tests must pass before commit."
+  exit 1
+fi
+
+# Check test coverage
+coverage run -m pytest
+
+# Generate report and check for a minimum coverage of 95%
+coverage report -m --fail-under=95
+
+if [ $? -ne 0 ]; then
+  echo "Test coverage must be above 95%."
+  exit 1
+fi
+
+# All checks passed
+exit 0
