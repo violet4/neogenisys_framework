@@ -7,9 +7,11 @@ DESCRIPTION="Your project description here"
 HOMEPAGE="https://github.com/violet4/neogenisys_framework"
 SRC_URI="https://github.com/violet4/neogenisys_framework/archive/v${PV}.tar.gz"
 
-LICENSE="Your License Here"
+LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+# Only add architectures (such as x86) that you have actually tested.
+# It's perfectly Ok to omit things, but it's a bad idea to include ones that you can't verify.
+KEYWORDS="~amd64"
 IUSE="docker kubernetes"
 
 DEPEND="
