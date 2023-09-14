@@ -1,3 +1,16 @@
+# escape=\
+
+# all parser directives must appear first, before any comments.
+# it is recommended to use escape=` on windows; otherwise `c:\\` appearing at the
+# end of a line will be treated as a line continuation, not the `c:\\` you want.
+# the escape directive sets what character is used to escape characters
+# within a line, and also denote a line continuation, so that we can split
+# a single command/line onto separate lines in order to improve readability.
+# see more at https://docs.docker.com/engine/reference/builder/#parser-directives
+
+ENV SOME_STRING=foo
+RUN echo ${SOME_STRING:-default}
+
 # https://sourcery.ai/blog/python-docker/
 # https://aka.ms/vscode-docker-python
 
